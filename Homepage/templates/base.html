@@ -16,28 +16,15 @@
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-    <header class="bg-blue-600 text-white p-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Mirpur Dental Supply</h1>
-            <nav>
-                <a href="{% url 'home' %}" class="px-3 hover:text-blue-200">Home</a>
-                <a href="#" class="px-3 hover:text-blue-200">Products</a>
-                <a href="#" class="px-3 hover:text-blue-200">About Us</a>
-                <a href="#" class="px-3 hover:text-blue-200">Contact</a>
-            </nav>
-        </div>
-    </header>
+    {% include 'Homepage/header.html' %}
 
     <main class="container mx-auto mt-8 p-4">
         {% block content %}
         <!-- Page-specific content goes here -->
         {% endblock %}
     </main>
-
-    <footer class="bg-gray-800 text-white text-center p-4 mt-12">
-        <p>&copy; {% now "Y" %} Mirpur Dental Supply. All rights reserved.</p>
-    </footer>
-
+    {% comment %} footer {% endcomment %}
+    {% include 'Homepage/footer.html' %}
     {% block extra_js %}{% endblock %}
 </body>
 </html>
