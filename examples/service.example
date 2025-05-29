@@ -1,0 +1,17 @@
+[Unit]
+Description=mirpurdentalsupply-uWSGI-instance
+After=network.target postgresql-11.service
+
+[Service]
+User=centos
+Group=nginx
+WorkingDirectory=/opt/mirpurdentalsupply
+Environment="PATH=/opt/mirpurdentalsupply/venv/bin"
+ExecStart=/opt/mirpurdentalsupply/venv/bin/uwsgi --ini /opt/mirpurdentalsupply/uwsgi/uwsgi.ini
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target

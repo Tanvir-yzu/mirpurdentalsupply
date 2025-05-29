@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Mirpur Dental Supply{% endblock %}
+
+{% block content %}
+<section class="bg-white p-6 rounded-lg shadow-lg mb-8" x-data="{ title: 'Welcome to Our Store!' }">
+    <h2 class="text-3xl font-semibold mb-4" x-text="title"></h2>
+    <p class="text-gray-700 mb-4">
+        We provide the best dental supplies in Mirpur. Browse our products and find what you need.
+    </p>
+    <button @click="title = 'Tailwind & Alpine.js are Awesome!'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Click Me!
+    </button>
+</section>
+
+<section x-data="{ open: false }" class="bg-white p-6 rounded-lg shadow-lg mb-8">
+    <button @click="open = !open" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">
+        Toggle Content
+    </button>
+    <div x-show="open" x-transition class="p-4 border border-gray-300 rounded">
+        <p>This is some content that can be toggled with Alpine.js. It uses Tailwind CSS for styling.</p>
+        <p class="mt-2 text-sm text-gray-600">You can put any content here, like product details, FAQs, etc.</p>
+    </div>
+</section>
+
+<section class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Quality Products</h3>
+        <p class="text-gray-600">We offer a wide range of high-quality dental supplies.</p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Fast Shipping</h3>
+        <p class="text-gray-600">Get your orders delivered quickly and reliably.</p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Great Support</h3>
+        <p class="text-gray-600">Our team is here to help you with any questions.</p>
+    </div>
+</section>
+{% endblock %}
